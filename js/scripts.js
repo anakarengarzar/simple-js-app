@@ -14,3 +14,7 @@ let pokemonList = [
         height: 1.5,
         type: ['flying', 'normal']
     }];
+
+for (let i = 0; i < pokemonList.length; i++){
+    document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}m)<br>`);
+}
