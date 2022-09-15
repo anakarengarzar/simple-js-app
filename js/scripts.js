@@ -1,25 +1,42 @@
-let pokemonList = [
-    {
-        name: 'Bulbasur',
-        height: 0.7,
-        type: ['grass', 'poison']
-    },
-    {
-        name: 'Beedrill',
-        height: 1,
-        type: ['bug', 'poison']
-    },
-    {
-        name: 'Pidgeot',
-        height: 1.5,
-        type: ['flying', 'normal']
-    }];
+//IIEF
+let pokemonRepository = (function(){
+    
+    let pokemonList = [
+        {
+            name: 'Bulbasur',
+            height: 0.7,
+            type: ['grass', 'poison']
+        },
+        {
+            name: 'Beedrill',
+            height: 1,
+            type: ['bug', 'poison']
+        },
+        {
+            name: 'Pidgeot',
+            height: 1.5,
+            type: ['flying', 'normal']
+        }];
 
-    pokemonList.forEach(function(pokemon){
-        if (pokemon.height > 1){
-            document.write(`- ${pokemon.name} (height: ${pokemon.height}m) - That's big!<br>`);
-        } else {
-            document.write(`- ${pokemon.name} (height: ${pokemon.height}m)<br>`); 
-        }
-    });
+    function getAll(){
+        return pokemonList;
+    };
+
+    function add(newPokemon){
+        return pokemonList.push(newPokemon);
+    };
+
+    return {
+        getAll: getAll,
+        add: add
+    }
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIEF
+    if (pokemon.height > 1){
+        document.write(`- ${pokemon.name} (height: ${pokemon.height}m) - That's big!<br>`);
+    } else {
+        document.write(`- ${pokemon.name} (height: ${pokemon.height}m)<br>`); 
+    }
+});
 
