@@ -23,7 +23,12 @@ let pokemonRepository = (function(){
     };
 
     function add(newPokemon){
-        return pokemonList.push(newPokemon);
+        if (typeof newPokemon === 'object'){
+            console.log('Your new pokemon had been added to the list.')
+            return pokemonList.push(newPokemon);
+        } else {
+            console.log('The information you entered is not valid.')
+        }   
     };
 
     return {
