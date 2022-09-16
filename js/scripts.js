@@ -23,11 +23,11 @@ let pokemonRepository = (function(){
     };
 
     function add(newPokemon){
-        if (typeof newPokemon === 'object'){
+        if (typeof newPokemon === 'object' && 'name' in newPokemon){
             console.log('Your new pokemon had been added to the list.')
             return pokemonList.push(newPokemon);
         } else {
-            console.log('The information you entered is not valid.')
+            console.log('The information you entered is not valid. You must enter an object with at least the key {name: \'\'}')
         }   
     };
 
@@ -45,3 +45,4 @@ pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIE
     }
 });
 
+//Object.keys(newPokemon) === ['name', 'height', 'type'
