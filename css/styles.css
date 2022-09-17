@@ -1,11 +1,18 @@
-body {
-    font-family: sans-serif;
-    font-size: xx-large;
-    font-weight: 600;
-    color: navy;
+h1 {
+    margin-left: 58px;
+}
+
+ul {
+    list-style: none;
 }
 
 .buttonStyle {
     background-color: black;
+    border: none;
     color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 15%;
+    margin: 10px;
 }

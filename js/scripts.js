@@ -23,7 +23,7 @@ let pokemonRepository = (function(){
         return pokemonList;
     };
 
-    //function that will allow to add to the pokemonList    
+    //function that will allow to add a new object to the pokemonList    
     function add(newPokemon){
         if (typeof newPokemon === 'object' && 'name' in newPokemon){ //tried to make it work with Object.keys(newPokemon) === ['name', 'height', 'type'] but couldn't make it work.
             console.log('Your new pokemon had been added to the list.')
@@ -33,26 +33,25 @@ let pokemonRepository = (function(){
         }   
     };
 
-    return {
+    //function that will allow to write in the html document a list of buttons (to be invoked in the forEach function outside IIEF)
+    function addListItem(pokemon){
+        let pokeList = document.querySelector('ul'); //selects the ul in the html
+        let pokeListItem = document.createElement('li'); //creates a li 
+        let button = document.createElement('button'); //creates a button
+        button.innerText = pokemon.name; //assigns the name of the current pokemon in the iteration to the button just created
+        button.classList.add('buttonStyle'); //adds the class with the button styling to the button just created
+        pokeListItem.appendChild(button); //adds the created button to the created li
+        pokeList.appendChild(pokeListItem); //adds the created li to the ul in the original html
+    };
+
+    return { 
+        //all functions created inside the IIEF are returned so that they can be called outside of the IIEF
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     }
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIEF
-    
-    let pokeList = document.querySelector('ul');
-    let pokeListItem = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('buttonStyle');
-    pokeListItem.appendChild(button);
-    pokeList.appendChild(pokeListItem);
-
+pokemonRepository.getAll().forEach(function(pokemon){ //calling the function from inside the IIEF which returns the array pokemonList then use forEach to iterate through each object in the array (which will be the value of the 'pokemon' parameter)
+    pokemonRepository.addListItem(pokemon); //calling the addListItem inside the IIEF which will apply the function addListItem actions to each object in the pokemonList array     
 });
-
-// if (pokemon.height > 1){
-//     document.write(`- ${pokemon.name} (height: ${pokemon.height}m) - That's big!<br>`);
-// } else {
-//     document.write(`- ${pokemon.name} (height: ${pokemon.height}m)<br>`); 
-// }
