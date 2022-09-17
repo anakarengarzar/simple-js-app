@@ -43,9 +43,10 @@ pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIE
     
     let pokeList = document.querySelector('ul');
 
-    if (pokemon.height > 1){
-        document.write(`- ${pokemon.name} (height: ${pokemon.height}m) - That's big!<br>`);
-    } else {
-        document.write(`- ${pokemon.name} (height: ${pokemon.height}m)<br>`); 
-    }
 });
+
+// if (pokemon.height > 1){
+//     document.write(`- ${pokemon.name} (height: ${pokemon.height}m) - That's big!<br>`);
+// } else {
+//     document.write(`- ${pokemon.name} (height: ${pokemon.height}m)<br>`); 
+// }
