@@ -4,3 +4,8 @@ body {
     font-weight: 600;
     color: navy;
 }
+
+.buttonStyle {
+    background-color: black;
+    color: white;
+}
