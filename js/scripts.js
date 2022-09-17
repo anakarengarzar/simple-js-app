@@ -42,6 +42,9 @@ let pokemonRepository = (function(){
 pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIEF
     
     let pokeList = document.querySelector('ul');
+    let pokeListItem = document.createElement('li');
+
+
 
 });
 
