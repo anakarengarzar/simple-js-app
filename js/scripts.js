@@ -47,7 +47,7 @@ pokemonRepository.getAll().forEach(function(pokemon){ //updated to work with IIE
     button.innerText = '${pokemon.name}';
     button.classList.add('buttonStyle');
     pokeListItem.appendChild(button);
-
+    pokeList.appendChild(pokeListItem);
 
 });
 
