@@ -38,13 +38,14 @@ let pokemonRepository = (function(){
         let pokeList = document.querySelector('ul'); //selects the ul in the html
         let pokeListItem = document.createElement('li'); //creates a li 
         let button = document.createElement('button'); //creates a button
+        
         button.innerText = pokemon.name; //assigns the name of the current pokemon in the iteration to the button just created
         button.classList.add('buttonStyle'); //adds the class with the button styling to the button just created
+        
         pokeListItem.appendChild(button); //adds the created button to the created li
         pokeList.appendChild(pokeListItem); //adds the created li to the ul in the original html
         
         button.addEventListener('click', showDetails(pokemon)); //added event listener which will activate the function showDetails when clicked
-    
     };
     
     function showDetails(pokemon){
