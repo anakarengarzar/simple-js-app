@@ -43,12 +43,17 @@ let pokemonRepository = (function(){
         pokeListItem.appendChild(button); //adds the created button to the created li
         pokeList.appendChild(pokeListItem); //adds the created li to the ul in the original html
     };
+    
+    function showDetails(pokemon){
+        console.log(pokemon);
+    }
 
     return { 
         //all functions created inside the IIEF are returned so that they can be called outside of the IIEF
         getAll: getAll,
         add: add,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     }
 })();
 
