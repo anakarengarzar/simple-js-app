@@ -42,6 +42,9 @@ let pokemonRepository = (function(){
         button.classList.add('buttonStyle'); //adds the class with the button styling to the button just created
         pokeListItem.appendChild(button); //adds the created button to the created li
         pokeList.appendChild(pokeListItem); //adds the created li to the ul in the original html
+        
+        button.addEventListener('click', showDetails(pokemon)); //added event listener which will activate the function showDetails when clicked
+    
     };
     
     function showDetails(pokemon){
