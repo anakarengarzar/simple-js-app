@@ -45,7 +45,9 @@ let pokemonRepository = (function(){
         pokeListItem.appendChild(button); //adds the created button to the created li
         pokeList.appendChild(pokeListItem); //adds the created li to the ul in the original html
         
-        button.addEventListener('click', showDetails(pokemon)); //added event listener which will activate the function showDetails when clicked
+        button.addEventListener('click', function (event){ //added event listener which will activate the function showDetails when clicked
+            showDetails(pokemon);
+        }); 
     };
     
     function showDetails(pokemon){
